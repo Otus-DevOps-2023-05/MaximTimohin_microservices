@@ -1,0 +1,7 @@
+REPOSITORY                 TAG       IMAGE ID       CREATED              SIZE
+max/ubuntu-tmp-file        latest    b5cd468a0329   About a minute ago   63.2MB
+ubuntu                     18.04     f9a80a55f492   2 months ago         63.2MB
+hello-world                latest    9c7a54a9a43c   3 months ago         13.3kB
+ubuntu                     latest    6b7dfa7e8fdb   8 months ago         77.8MB
+centos                     latest    5d0da3dc9764   23 months ago        231MB
+openswitch/tacacs_server   latest    d1264d85b32e   4 years ago          454MB
