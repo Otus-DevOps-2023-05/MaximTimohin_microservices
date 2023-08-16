@@ -1,0 +1,19 @@
+#cloud-config
+users:
+  - name: yc-user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC547cCbx7VHDJoMmfcZ0XWso7yo6iEEpjYTAa1YoFA4ulF4FgeQkG1iE+0xXNysKsUTxi7atmO0rzCvKaK45uwokDqJmM/0DY5Lh4PknWFSlatPV2lU6qRMwvmhqmKUmfGV+qwf3w4A3kirq7Fhx7+HNab3y2dHqyTQ8W7f6AVd7mvhtV1jM+JVGtRVvtDcfV+0Wdecu4Zn3Hog9F1TBR4EuRCXf/vz+J5xdvhe+M9ol9UaUcgxqw3m8aIEn4obafkClf2OmRoxNIUzjMpeAajBUAEGI9Pqyon7Xv7gURfHvCaWf47UtL2TID1ck/cxEIr2O8yMW/zjqNo8cF0wt2DK7LyFzQ/h4NekkAVvbj/RapqYYxLrChivM5CJXyKGXjBccrKWPUjTDtHTrDZDaLFrqYfQUrKeOrX20N/hqPM38QqSAX5HdV9OIGEoAzdkHfAd3fjA+tT52PBGfCsRl8j9kE08eMKWFJsVnqQInAGHrWDKUaOM5OuU8EWoIR62eE= root@tmv-lab
+  - name: maxim
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC547cCbx7VHDJoMmfcZ0XWso7yo6iEEpjYTAa1YoFA4ulF4FgeQkG1iE+0xXNysKsUTxi7atmO0rzCvKaK45uwokDqJmM/0DY5Lh4PknWFSlatPV2lU6qRMwvmhqmKUmfGV+qwf3w4A3kirq7Fhx7+HNab3y2dHqyTQ8W7f6AVd7mvhtV1jM+JVGtRVvtDcfV+0Wdecu4Zn3Hog9F1TBR4EuRCXf/vz+J5xdvhe+M9ol9UaUcgxqw3m8aIEn4obafkClf2OmRoxNIUzjMpeAajBUAEGI9Pqyon7Xv7gURfHvCaWf47UtL2TID1ck/cxEIr2O8yMW/zjqNo8cF0wt2DK7LyFzQ/h4NekkAVvbj/RapqYYxLrChivM5CJXyKGXjBccrKWPUjTDtHTrDZDaLFrqYfQUrKeOrX20N/hqPM38QqSAX5HdV9OIGEoAzdkHfAd3fjA+tT52PBGfCsRl8j9kE08eMKWFJsVnqQInAGHrWDKUaOM5OuU8EWoIR62eE= root@tmv-lab
+apt:
+package_update: true
+packages:
+  - nano
+  - net-tools
