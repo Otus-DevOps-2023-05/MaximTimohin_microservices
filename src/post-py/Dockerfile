@@ -8,6 +8,6 @@ RUN apk --no-cache --update add build-base && \
     apk del build-base
 
 ENV POST_DATABASE_HOST post_db
-ENV POST_DATABASE posts
+ENV POST_DATABASE post
 
 ENTRYPOINT ["python3", "post_app.py"]
