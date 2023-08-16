@@ -1,15 +1,13 @@
 FROM python:3.6.0-alpine
 
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev libffi-dev openssl-dev make
-
 WORKDIR /app
-
 ADD . /app
 
-RUN pip install -v -r /app/requirements.txt
+RUN apk --no-cache --update add build-base && \
+    pip install -r /app/requirements.txt && \
+    apk del build-base
 
-RUN apk del .build-deps
+ENV POST_DATABASE_HOST post_db
+ENV POST_DATABASE posts
 
-ENV POST_DATABASE_HOST=post_db POST_DATABASE=posts
-
-CMD ["python3", "post_app.py"]
+ENTRYPOINT ["python3", "post_app.py"]
