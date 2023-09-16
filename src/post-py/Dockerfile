@@ -1,13 +1,18 @@
 FROM python:3.6.0-alpine
 
+# Install build dependencies
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev libffi-dev openssl-dev make
+
 WORKDIR /app
+
 ADD . /app
 
-RUN apk --no-cache --update add build-base && \
-    pip install -r /app/requirements.txt && \
-    apk del build-base
+# Install Python dependencies
+RUN pip install -v -r /app/requirements.txt
 
-ENV POST_DATABASE_HOST post_db
-ENV POST_DATABASE post
+# Remove build dependencies if no longer needed
+RUN apk del .build-deps
 
-ENTRYPOINT ["python3", "post_app.py"]
+ENV POST_DATABASE_HOST=post_db POST_DATABASE=posts
+
+CMD ["python3", "post_app.py"]
